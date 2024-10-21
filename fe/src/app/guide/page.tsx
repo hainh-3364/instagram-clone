@@ -1,12 +1,13 @@
 import { BaseButton } from "@/components/atoms";
-import { BaseSlider, LightButton } from "@/components/molecules";
-import { Carousel, Message, MainNavigationBar } from "@/components/organisms";
+import { LightButton } from "@/components/molecules";
+import { Message, MainNavigationBar } from "@/components/organisms";
 import BottomNavigationBar from "@/components/organisms/BottomNavigationBar";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "@/components/atoms/ThemeSwitcher";
+import Providers from "../provider";
 
 export default function Guide() {
   return (
-    <>
+    <Providers>
       <div className="flex flex-col gap-[9px]">
         <BaseButton size="xl">Follow</BaseButton>
         <div className="flex gap-[6px]">
@@ -44,11 +45,9 @@ export default function Guide() {
       <br />
       <LightButton />
       <Message />
-      <Carousel />
       <MainNavigationBar />
       <BottomNavigationBar />
-      <BaseSlider />
       <ThemeSwitcher />
-    </>
+    </Providers>
   );
 }
